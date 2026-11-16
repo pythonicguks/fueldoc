@@ -15,3 +15,10 @@ uv run fueldoc serve     # prévisualisation locale
 
 Après modification du modèle : `uv run fueldoc build --clean`.
 Le site doit être servi en HTTP (les scènes 3D sont chargées par `fetch`).
+
+## Déploiement Cloudflare (Workers, assets statiques)
+
+`wrangler.jsonc` publie le dossier `site/`. Dans Cloudflare (Workers & Pages, import du dépôt) :
+
+- commande de build : `curl -LsSf https://astral.sh/uv/install.sh | sh && ~/.local/bin/uv run fueldoc build`
+- commande de déploiement : `npx wrangler deploy`

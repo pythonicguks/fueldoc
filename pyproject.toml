@@ -1,0 +1,24 @@
+[project]
+name = "fueldoc"
+version = "0.1.0"
+description = "Note de calcul interactive (PyVista, Plotly, Mermaid) publiée avec Zensical"
+requires-python = ">=3.11"
+dependencies = [
+    "zensical>=0.1.1",
+    "pyvista>=0.46",
+    "trame-pyvista>=0.3",   # export HTML vtk.js
+    "nest-asyncio2",        # requis par l'export HTML de PyVista
+    "vtk>=9.4",
+    "numpy",
+    "plotly>=6",            # fournit plotly.min.js, copié dans le site
+]
+
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = true
+
+[project.scripts]
+fueldoc = "fueldoc.cli:main"

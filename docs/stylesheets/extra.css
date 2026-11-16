@@ -1,0 +1,18 @@
+.study { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
+@media (max-width: 960px) { .study { grid-template-columns: 1fr; } }
+.viewer { position: relative; }
+.viewer iframe { width: 100%; aspect-ratio: 9 / 7; border: 0; border-radius: .4rem; background: #1b1b1f; }
+.cbar-wrap { position: absolute; right: .6rem; top: .6rem; bottom: .6rem; display: flex; gap: .3rem; align-items: stretch;
+  font-size: .62rem; color: #ddd; pointer-events: none; }
+.cbar-wrap .labels { display: flex; flex-direction: column; justify-content: space-between; text-align: right; }
+#cbar { width: .7rem; border-radius: 2px; }
+.controls { display: grid; grid-template-columns: auto 1fr auto; gap: .4rem .8rem; align-items: center; margin: .8rem 0; }
+.controls output { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 5.5em; text-align: right; }
+.controls input[type=range] { width: 100%; accent-color: var(--md-accent-fg-color); }
+#kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .6rem; margin: .6rem 0 1rem; }
+#kpis div { border: 1px solid var(--md-default-fg-color--lightest); border-radius: .4rem; padding: .5rem .7rem; }
+#kpis b { display: block; font-size: 1.35rem; }
+#kpis span { font-size: .7rem; opacity: .75; }
+#kpis .ok b { color: #2f9e44; } #kpis .bad b { color: #e03131; }
+.plot { width: 100%; min-height: 380px; }
+.plot.tall { min-height: 520px; }
